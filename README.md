@@ -1,5 +1,6 @@
 # ALU_Constrained_Random_Verification
 SystemVerilog constrained-random verification testbench and design for an ALU.
+
 1. Introduction
 The objective of this project is to implement a robust, industry-standard Constrained-Random Verification (CRV) environment for a 32-bit Arithmetic Logic Unit (ALU). Instead of manual directed testing, constrained-random stimulus generation allows automated exploration of standard arithmetic paths alongside rare corner cases (such as overflows, boundary values, and division by zero).
 
@@ -22,7 +23,9 @@ Scoreboard & Golden Model (alu_scoreboard): Operates as a software-based referen
 Automated Checking: Compares DUT outputs, zero flags, overflow flags, and division-by-zero flags against expected values, logging pass/fail results via mailboxes and interfaces.
 
 4. Implementation Code Snippets
+   
 Design Module (design.sv) Summary:
+
 module alu_rtl (
   input  logic [3:0]  alu_op,
   input  logic [31:0] operand_a,
@@ -35,7 +38,9 @@ module alu_rtl (
   // Contains combinational logic for ADD, SUB, Logical, Shifts, MUL, DIV, REM
   // and flag evaluation logic.
 endmodule
+
 @Testbench Transaction & Constraints Summary:
+
 class alu_transaction;
   rand logic [3:0]  alu_op;
   rand logic [31:0] operand_a;
