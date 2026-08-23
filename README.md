@@ -45,5 +45,6 @@ class alu_transaction;
   constraint operand_a_edge_c { ... }
   constraint shift_range_c { if (alu_op >= SLL) operand_b[31:5] == 27'b0; }
 endclass
+
 5. Conclusion & Results
 The testbench successfully executed 40+ randomized vectors on the ALU design in EDA Playground via VCS simulation. All test cases passed with zero mismatch errors, validating correct functionality across normal operational ranges and critical mathematical boundary conditions.
